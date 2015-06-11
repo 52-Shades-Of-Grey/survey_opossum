@@ -1,11 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  query_type: MyString
   query: MyText
-  type: 
   survey_id: 1
+  required: false
+  position: 1
+  description: MyText
 
 two:
+  query_type: MyString
   query: MyText
-  type: 
   survey_id: 1
+  required: false
+  position: 1
+  description: MyText
