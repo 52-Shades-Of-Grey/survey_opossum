@@ -158,16 +158,11 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   parsley-rails
-<<<<<<< HEAD
-  rails (= 4.2.1)
-  rails-footnotes (~> 4.0)
-=======
   pg
   puma
   rails (= 4.2.1)
   rails-footnotes (~> 4.0)
   rails_12factor
->>>>>>> 0a0646a66005a87b56b595792590207a3939bbcb
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
