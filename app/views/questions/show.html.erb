@@ -1,18 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Query type:</strong>
+  <%= @question.query_type %>
+</p>
+
+<p>
   <strong>Query:</strong>
   <%= @question.query %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @question.type %>
+  <strong>Survey:</strong>
+  <%= @question.survey_id %>
 </p>
 
 <p>
-  <strong>Survey:</strong>
-  <%= @question.survey_id %>
+  <strong>Required:</strong>
+  <%= @question.required %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @question.position %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question.description %>
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |

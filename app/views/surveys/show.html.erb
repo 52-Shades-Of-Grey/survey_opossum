@@ -15,5 +15,15 @@
   <%= @survey.user_id %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @survey.description %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @survey.published %>
+</p>
+
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

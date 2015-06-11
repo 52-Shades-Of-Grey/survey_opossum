@@ -4,6 +4,8 @@ class CreateSurveys < ActiveRecord::Migration
       t.string :name
       t.string :keyword
       t.integer :user_id
+      t.text :description
+      t.boolean :published
 
       t.timestamps null: false
     end

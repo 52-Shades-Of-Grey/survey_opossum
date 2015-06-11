@@ -4,8 +4,12 @@ one:
   name: MyString
   keyword: MyString
   user_id: 1
+  description: MyText
+  published: false
 
 two:
   name: MyString
   keyword: MyString
   user_id: 1
+  description: MyText
+  published: false
