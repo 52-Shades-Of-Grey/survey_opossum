@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyText
+  type: 
+  survey_id: 1
+
+two:
+  query: MyText
+  type: 
+  survey_id: 1

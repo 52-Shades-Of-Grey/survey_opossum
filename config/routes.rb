@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :string_questions
+  resources :answers
+  resources :questions
   resources :users
   resources :surveys
   # The priority is based upon order of creation: first created -> highest priority.
