@@ -1,8 +1,12 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :add_question]
 
   # GET /surveys
   # GET /surveys.json
+  # def add_question
+  #   # @survey = Survey.last
+  # end
+
   def index
     @surveys = Survey.all
   end
@@ -10,6 +14,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    @survey.questions.build
   end
 
   # GET /surveys/new
@@ -29,9 +34,8 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to new_question_path, notice: 'Survey was successfully created.' }
+        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
-        session[:survey_id] = @survey.id
       else
         format.html { render :new }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
