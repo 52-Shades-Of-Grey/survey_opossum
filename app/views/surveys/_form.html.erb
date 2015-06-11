@@ -27,20 +27,6 @@
     <%= f.label :published, 'Make public?' %><br>
     <%= f.check_box :published %>
   </div>
-  <%= f.fields_for(:questions) do |ff| %>
-    <div class="field">
-      <%= ff.label :query %><br>
-      <%= ff.text_field :query %>
-    </div>
-    <div class="field">
-      <%= ff.label :description %><br>
-      <%= ff.text_field :description %>
-    </div>
-    <div class="field">
-      <%= ff.label :required, 'Make Private?' %><br>
-      <%= ff.check_box :required %>
-    </div>
-  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
