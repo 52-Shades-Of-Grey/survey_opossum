@@ -15,12 +15,11 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
-    @survey.questions.build
   end
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
+    # @survey.questions.build
   end
 
   # POST /surveys
@@ -30,8 +29,9 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.html { redirect_to new_question_path, notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
+        session[:survey_id] = @survey.id
       else
         format.html { render :new }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
