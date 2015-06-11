@@ -20,17 +20,27 @@
     <%= f.text_field :keyword %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :published %><br>
+    <%= f.label :published, 'Make public?' %><br>
     <%= f.check_box :published %>
   </div>
+  <%= f.fields_for(:questions) do |ff| %>
+    <div class="field">
+      <%= ff.label :query %><br>
+      <%= ff.text_field :query %>
+    </div>
+    <div class="field">
+      <%= ff.label :description %><br>
+      <%= ff.text_field :description %>
+    </div>
+    <div class="field">
+      <%= ff.label :required, 'Make Private?' %><br>
+      <%= ff.check_box :required %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

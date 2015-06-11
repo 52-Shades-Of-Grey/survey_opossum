@@ -15,14 +15,10 @@
     <%= f.label :query_type %><br>
     <%= f.text_field :query_type %>
   </div>
-  <div class="field">
-    <%= f.label :query %><br>
-    <%= f.text_area :query %>
-  </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :survey_id %><br>
     <%= f.number_field :survey_id %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :required %><br>
     <%= f.check_box :required %>
@@ -35,6 +31,11 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <%= f.label :query %><br>
+    <%= f.text_area :query %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
