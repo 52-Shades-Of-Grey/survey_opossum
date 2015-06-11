@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem "parsley-rails"
+gem 'parsley-rails'
 
 gem 'rails-footnotes', '~> 4.0'
 
@@ -36,6 +34,14 @@ gem 'rails-footnotes', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+group :production do
+  gem 'pg'
+  gem 'puma'
+  gem 'rails_12factor'
+end
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -45,4 +51,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
 end
