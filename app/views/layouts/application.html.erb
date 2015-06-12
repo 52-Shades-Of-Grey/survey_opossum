@@ -10,6 +10,8 @@
 <body>
   <p id="notice"><%= notice %></p>
 <%= yield %>
-
+<div class="logout">
+  <%= link_to "Logout", sessions_logout_path if session[:user_id] %></br>
+</div>
 </body>
 </html>
