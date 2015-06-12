@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
   resources :questions
   resources :surveys
   # post '/add_questions' => 'surveys#add_questions'

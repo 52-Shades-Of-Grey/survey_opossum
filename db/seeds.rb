@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+t_f = [true,false]
+5.times do |user_counter|
+  user = User.create!(name: "#{user_counter+1}", email: "#{user_counter+1}@email.com",
+      password: "password")
+  3.times do |survey_counter|
+    survey = Survey.create!(name: "Survey#{survey_counter+1}",
+        keyword: Faker::Name.first_name, user_id: user.id,
+        description: Faker::Company.catch_phrase, published: t_f.sample)
+    3.times do |question_counter|
+      question = Question.create!(query: (Faker::Lorem.sentence(3, false)),
+          query_type: ["short", t_f.sample].sample, survey_id: survey.id,
+          required: t_f.sample, position: Faker::Number.number(2),
+          description: (Faker::Lorem.sentence(3, false)))
+    end
+  end
+end
