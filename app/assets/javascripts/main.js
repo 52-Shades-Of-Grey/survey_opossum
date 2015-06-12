@@ -11,9 +11,10 @@ $(function (){
 		var queryType = $("#survey_questions_attributes_0_query_type").val()
 		var position = $('#survey_questions_attributes_0_position').val();
 
-		var newLi = '<li class="new-question-li">' + queryValue +  required + position + '<button class="question-delete">X</button></li>'
+		var newLi = '<li class="new-question-li">' + queryValue + '<button class="question-delete">X</button></li>'
 
 		$('.question-ul').append(newLi).html();
+		
 		$('.new-question-modal').removeClass("show");
 		$('.new-question-modal').addClass(" hide");
 	})
