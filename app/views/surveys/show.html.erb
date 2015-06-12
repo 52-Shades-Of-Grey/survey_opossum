@@ -1,4 +1,4 @@
-<!-- <div class="outer-container">
+<div class="outer-container">
     <div class="content">
       <div class="survey-header">
       <h1 class="survey-title">Survey Title</h1>
@@ -14,74 +14,38 @@
   </div>
 </div>
 
+<h1>Add Questions for your Survey</h1>
+<%= form_for(@survey) do |f| %>
+  <%= f.fields_for(:questions) do |ff| %>
+    <div class="field">
+      <%= ff.label :query %><br>
+      <%= ff.text_field :query %>
+    </div>
+    <div class="field">
+      <%= ff.label :description %><br>
+      <%= ff.text_field :description %>
+    </div>
+    <div class="field">
+      <%= ff.label :required, 'Make Private?' %><br>
+      <%= ff.check_box :required %>
+    </div>
+    <div class="field">
+      <%= ff.label :query_type %><br>
+      <%= ff.text_field :query_type %>
+    </div>
+    <div class="field">
+      <%= ff.label :position %><br>
+      <%= ff.text_field :position %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit :Submit %>
+  </div>
+<% end %>
 
-
-      Modal
-
-<!-- <div class="new-question-modal hide">
-  <div class="modal-inner-cont">
-    <form class="new-question-form">
-      <label>Type your question: </label>
-      <input type="text" class="new-question-input">
-      <label>Question description: </label>
-      <input type="text" class="new-question-input">
-      <label>Question position: </label>
-      <input type="text" class="new-question-input">
-
-      <label>Type of question:</label>
-      <select>
-        <option>True/False</option>
-        <option>Short Answer</option>
-        <option>Long Answer</option>
-      </select>
-
-      <label>Required question?</label>
-      <input type="checkbox">
-
-      <button class="btn-submit-question">Submit
-      </button>
-
-    </form>
-  -->
-
-
-
-<div class="new-question-modal hide">
-  <div class="modal-inner-cont">
-
-    <h1>Add Questions for your Survey</h1>
-    <%= form_for(@survey) do |f| %>
-      <%= f.fields_for(:questions) do |ff| %>
-        <div class="field">
-          <%= ff.label :query %><br>
-          <%= ff.text_field :query %>
-        </div>
-        <div class="field">
-          <%= ff.label :description %><br>
-          <%= ff.text_field :description %>
-        </div>
-        <div class="field">
-          <%= ff.label :required, 'Make Private?' %><br>
-          <%= ff.check_box :required %>
-        </div>
-        <div class="field">
-          <%= ff.label :query_type %><br>
-          <%= ff.text_field :query_type %>
-        </div>
-        <div class="field">
-          <%= ff.label :position %><br>
-          <%= ff.text_field :position %>
-        </div>
-
-      <% end %>
-      <div class="actions">
-        <%= f.submit :Submit %>
-      </div>
-    <% end %>
-
-    <%= link_to 'Edit', edit_survey_path(@survey) %> |
-    <%= link_to 'Back', surveys_path %>
-
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
 
  </div>
-</div>
+</div
+>>>>>>> 710e2a32dc3f919b210ce6cef3209bed9787f079
