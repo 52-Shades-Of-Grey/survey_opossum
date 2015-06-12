@@ -1,4 +1,5 @@
 class SurveysController < ApplicationController
+  before_action :logged_in?
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   # GET /surveys
@@ -9,6 +10,7 @@ class SurveysController < ApplicationController
 
   def index
     @surveys = Survey.all
+    @user = User.find_by_id(session[:user_id])
   end
 
   # GET /surveys/1
