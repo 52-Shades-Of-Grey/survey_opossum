@@ -1,3 +1,180 @@
-// Place all the styles related to the surveys controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: 'Sintony', sans-serif;
+	background: #B2EBF2;
+}
+
+button {
+cursor: pointer;
+}
+
+button:focus {
+	outline: 0;
+}
+
+// .page-header {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	height: 4em;
+// 	background-color: #00BCD4;
+// 	z-index:1;
+// }
+
+.outer-container {
+	background-color: #FFFFFE;
+	width: 80%;
+	margin: 0 auto;
+	box-shadow: 5px 10px 10px 5px #888888;
+}
+
+.content {
+	margin-top: 2em;
+	text-align: center;
+}
+
+.survey-title {
+	font-size: 4em;
+	color: #00BCD4;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.btn-container {
+	margin: auto;
+	padding-bottom: 1.75em;
+
+}
+
+.btn-new-question {
+	overflow: hidden;
+	width: 14em;
+	padding: 1em;
+	background-color: #00BCD4;
+	color: #eee;
+	border: 0;
+	font-size: 1em;
+}
+
+.btn-new-question:hover {
+	background-color: #DE4D4E;
+}
+
+.new-question-li {
+	color: #888888;
+	padding: 1em;
+	margin: 1em;
+	position: relative;
+}
+
+.btn-create-survey {
+	font-size: 1.5em;
+	border-radius: 50%;
+	border: 0;
+	width: 100px;
+	height: 100px;
+	color: white;
+	background-color: #00BCD4; 
+	margin-bottom: -1.85em;
+}
+
+.btn-create-survey:hover {
+	background-color: #DE4D4E;
+}
+
+.survey-header {
+	background-color: #e0f7fa;
+}
+
+.new-question-li {
+	background-color: #ECF0F1;
+	width: 60%;
+	margin: 1em auto;
+	padding: 2em;
+}
+
+.question-delete {
+	border: none;
+	font-size: 1em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 0.75em;
+	background-color: #ECF0F1;
+	color: #00BCD4;
+}
+
+.question-delete:hover {
+	background-color: #DE4D4E; 
+	color: #FFFFFE;
+}
+
+// MODAL
+
+.new-question-modal {
+	width: 40em;
+	height: 46em;
+	background-color: #FFFFFE; 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 5px 10px 10px 5px #888888;
+}
+
+.modal-inner-cont {
+	padding: 4em;	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #e0f7fa;
+	width: 70%;
+}
+
+.new-question-form {
+	width: 90%;
+}
+
+.new-question-form * {
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.new-question-form input {
+	width: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
