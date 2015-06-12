@@ -1,3 +1,56 @@
+<div class="outer-container">
+    <div class="content">
+
+      <div class="survey-header">
+
+      <h1 class="survey-title">Survey Title</h1>
+
+        <div class="btn-container">
+          <button class="btn-new-question">Add Question</button>
+        </div>
+      
+      </div>
+
+        <ul class="question-ul">
+          <li class="new-question-li">What's your favorite color?<button class="question-delete">X</button></li>
+        </ul>
+
+        <button class="btn-create-survey">Submit</button>
+  </div>
+</div>
+
+      
+
+      <!-- Modal -->
+
+<div class="new-question-modal hide">
+  <div class="modal-inner-cont">
+    <form class="new-question-form">
+      <label>Type your question: </label>
+      <input type="text" class="new-question-input">
+      <label>Question description: </label>
+      <input type="text" class="new-question-input">
+      <label>Question position: </label>
+      <input type="text" class="new-question-input">
+
+      <label>Type of question:</label>
+      <select>
+        <option>True/False</option>
+        <option>Short Answer</option>
+        <option>Long Answer</option>
+      </select>
+
+      <label>Required question?</label>
+      <input type="checkbox">
+
+      <button class="btn-submit-question">Submit
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<!-- 
 <p id="notice"><%= notice %></p>
 <h1>Add Questions for your Survey</h1>
 <%= form_for(@survey) do |f| %>
@@ -22,3 +75,36 @@
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
