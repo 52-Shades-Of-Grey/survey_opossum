@@ -14,6 +14,9 @@
   </div>
 </div>
 
+<div class="new-question-modal hide">
+  <div class="modal-inner-cont">
+
 <h1>Add Questions for your Survey</h1>
 <%= form_for(@survey) do |f| %>
   <%= f.fields_for(:questions) do |ff| %>
