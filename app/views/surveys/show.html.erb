@@ -1,4 +1,4 @@
-<div class="outer-container">
+<!-- <div class="outer-container">
     <div class="content">
 
       <div class="survey-header">
@@ -8,7 +8,7 @@
         <div class="btn-container">
           <button class="btn-new-question">Add Question</button>
         </div>
-      
+
       </div>
 
         <ul class="question-ul">
@@ -19,9 +19,9 @@
   </div>
 </div>
 
-      
 
-      <!-- Modal -->
+
+      Modal 
 
 <div class="new-question-modal hide">
   <div class="modal-inner-cont">
@@ -48,9 +48,10 @@
 
     </form>
   </div>
-</div>
+</div> -->
 
-<!-- 
+
+
 <p id="notice"><%= notice %></p>
 <h1>Add Questions for your Survey</h1>
 <%= form_for(@survey) do |f| %>
@@ -67,6 +68,15 @@
       <%= ff.label :required, 'Make Private?' %><br>
       <%= ff.check_box :required %>
     </div>
+    <div class="field">
+      <%= ff.label :query_type %><br>
+      <%= ff.text_field :query_type %>
+    </div>
+    <div class="field">
+      <%= ff.label :position %><br>
+      <%= ff.text_field :position %>
+    </div>
+
   <% end %>
   <div class="actions">
     <%= f.submit :Submit %>
@@ -75,36 +85,3 @@
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
