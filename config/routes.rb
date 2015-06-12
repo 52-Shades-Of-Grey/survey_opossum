@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/login' 
+  post 'sessions/login'
+  get 'sessions/logout'
+
   resources :questions
   resources :surveys
-  # post '/add_questions' => 'surveys#add_questions'
   resources :answers
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

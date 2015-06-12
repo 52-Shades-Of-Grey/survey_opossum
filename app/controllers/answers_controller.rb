@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :logged_in?
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
