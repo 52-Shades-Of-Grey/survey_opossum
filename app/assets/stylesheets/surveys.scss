@@ -122,19 +122,35 @@ button:focus {
 	box-shadow: 5px 10px 10px 5px #888888;
 }
 
-.new-question-modal input {
-	padding: 0.5em;
-}
-
 .modal-inner-cont {
-	padding: 12em 11em;	
+	padding: 4em;	
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #e0f7fa;
+	width: 70%;
+}
 
+.new-question-form {
+	width: 90%;
+}
 
+.new-question-form * {
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.new-question-form input {
+	width: 100%;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
 }
 
 
