@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  get 'surveys/responses/:id' => 'responses#new'
+
+  get 'responses/create'
+
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
-  root 'users#index'
+  root 'surveys#index'
   resources :questions
   resources :surveys
   resources :answers
   resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
