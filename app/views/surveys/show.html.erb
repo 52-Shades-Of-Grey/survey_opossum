@@ -8,7 +8,6 @@
 
       </div>
         <ul class="question-ul">
-          <li class="new-question-li">What's your favorite color?<button class="question-delete">X</button></li>
         </ul>
         <button class="btn-create-survey">Submit</button>
   </div>
@@ -29,7 +28,7 @@
       <%= ff.text_field :description %>
     </div>
     <div class="field">
-      <%= ff.label :required, 'Required' %><br>
+      <%= ff.label :required, 'Make required?' %><br>
       <%= ff.check_box :required %>
     </div>
     <div class="field">
