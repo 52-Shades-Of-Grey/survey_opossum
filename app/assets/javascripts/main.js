@@ -9,6 +9,18 @@ $(function (){
 	$(".edit_survey").on('submit', function (e) {
 		e.preventDefault();
 
+		var allInputs = ($('.edit_survey :input'));
+		
+
+		allInputs.each(function () {
+			if (this.id && this.name) {
+				this.id = this.id.replace(/[0-9]/g, counter);
+				this.name = this.id.replace(/[0-9]/g, counter);
+				console.log(this.id);
+				console.log(this.name);
+			}
+		})
+
 		var query = $('#survey_questions_attributes_' + counter + '_query');
 		var required = $('#survey_questions_attributes_' + counter + '_required');
 		var queryType = $('#survey_questions_attributes_' + counter + '_query_type');
@@ -19,19 +31,7 @@ $(function (){
 		var queryTypeVal = queryType.val()
 		var positionVal = position.val();
 
-		console.log(query);
-		
-
-
-		// 'survey[questions_attributes][' + counter + '][query]'
-		// 'survey[questions_attributes][' + counter + '][description]'
-		// 'survey[questions_attributes][' + counter + '][required]'
-		// 'survey[questions_attributes][' + counter + '][query_type]'
-		// 'survey[questions_attributes][' + counter + '][position]'
-
-
 		counter++;
-		console.log(counter);
 
 		var newLi = '<li class="new-question-li">' + queryVal + '<button class="question-delete">X</button></li>'
 
