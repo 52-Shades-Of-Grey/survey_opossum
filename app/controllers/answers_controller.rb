@@ -26,9 +26,12 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
+    @current_question = Question.find_by_id(params[:answer][:question_id])
+    @current_survey = Survey.find_by_id(@current_question.id)
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        session[:counter] += 1
+        format.html { redirect_to "#{root_url}surveys/responses/#{@current_survey.id}", notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
