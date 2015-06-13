@@ -8,6 +8,7 @@
       <th>User</th>
       <th>Description</th>
       <th>Published</th>
+        <th> URL </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,9 @@
         <td><%= survey.user_id %></td>
         <td><%= survey.description %></td>
         <td><%= survey.published %></td>
+        <% if survey.published == true %>
+          <td><%= survey.url %></td>
+        <% end %>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
