@@ -10,14 +10,20 @@ $(function (){
 		e.preventDefault();
 
 		var allInputs = ($('.edit_survey :input'));
-		
+		var allLabels = ($('.edit_survey label'));	
 
-		allInputs.each(function () {
+		allInputs.each(function() {
 			if (this.id && this.name) {
 				this.id = this.id.replace(/[0-9]/g, counter);
 				this.name = this.id.replace(/[0-9]/g, counter);
-				console.log(this.id);
-				console.log(this.name);
+			}
+		});
+
+		allLabels.each(function() {
+			if ($(this).attr('for')) {
+				var self = $(this);
+				var forAttr = $(this).attr('for')
+				self.attr('for', forAttr.replace(/[0-9]/g, counter));
 			}
 		})
 
