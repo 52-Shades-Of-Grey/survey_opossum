@@ -1,12 +1,57 @@
 <h1>Login</h1>
-<%= form_tag do %>
-  <div class="field">
-    <%= label_tag :email %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../reset.css">
+  <link rel="stylesheet" type="text/css" href="login-styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <title>login</title>
+</head>
+<body>
+
+  <header>
+    <h1 class="pg-title">OPAWESOME</h1>
+    <img src="../../app/assets/images/Drawing (1).png">
+    <button class="header-fake-btn"></button>
+  </header>
+
+    <%= form_tag do %>
+    <div class="login-info">
+        <%= label_tag :email, class: "username" %>
+      <%= text_field_tag :email %>
+        <%= label_tag :password, class: "password" %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="login-btn">
+      <%= submit_tag 'Login' %>
+    </div>
+
+    <% end %>
+    <!-- <form class="login-form"> -->
+
+        <!-- <input class="username" placeholder="username">
+        <input class="password" placeholder="password"> -->
+
+        <button class="btn-user-login">Login</button>
+
+        <button class="btn-new-user">New User</button>
+
+      <div class="btn-survey-list">
+        <button class="btn-take-surveys">Take a Survey</button>
+      </div>
+
+    </form>
   </div>
-  <%= text_field_tag :email %>
-  <div class="field">
-    <%= label_tag :password %>
+
+  <div class="login-footer">
+    <p class="credits">Created by 52 Shades of Grey</p>
+    <a href="https://github.com/52-Shades-Of-Grey/survey_opossum"><i class="fa fa-github"></i>
   </div>
-  <%= password_field_tag :password %>
-  <%= submit_tag 'Login' %>
-<% end %>
+
+</body>
+</html>
