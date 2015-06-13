@@ -1,0 +1,12 @@
+<h1>Responses#new</h1>
+<p>Find me in app/views/responses/new.html.erb</p>
+<%= @survey.questions.each do |q| %>
+  <%= q.query %>
+  <%= q.required %>
+  <%= q.query_type %>
+  <%= q.query %>
+  <%= q.survey_id %>
+  <%= q.required %>
+  <%= q.position %>
+  <%= q.description %>
+  <% end %>
