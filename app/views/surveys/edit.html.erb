@@ -36,7 +36,14 @@
 
   <% else %>
     <h1>Answers for <%= @survey.name %></h1>
-    </div>
+        <%= @survey.name %><br>
+        <%= @survey.keyword %><br>
+        <%= @survey.user_id %><br>
+        <%= @survey.description %><br>
+        <%= @survey.published %><br>
+        <% if @survey.published == true %>
+          <%= @survey.url %></br>
+        <% end %>
     <% survey_questions.order(:position).each do |quest| %>
       <% quest.answers.each do |a| %>
         <div>Question<%= quest.position %></div>
