@@ -59,7 +59,6 @@ table {
 body {
   background-color: #e0f7fa;
   font-family: Sintony;
-  overflow: hidden;
 }
 button {
   cursor: pointer;
@@ -96,6 +95,7 @@ img {
   height: 12em;
   background-color: #00BCD4;
   margin-bottom: 1em;
+	cursor: none;
 }
 
 .login-form {
@@ -123,6 +123,7 @@ input {
   color: white;
   background: #00BCD4;
 	cursor: pointer;
+	display: inline-block;
 }
 
 .btn-survey-list {
