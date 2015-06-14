@@ -1,7 +1,7 @@
 <div class="outer-container">
     <div class="content">
       <div class="survey-header">
-      <h1 class="survey-title">Survey Title</h1>
+      <h1 class="survey-title"><%= @survey.name %></h1>
         <div class="btn-container">
           <button class="btn-new-question">Add Question</button>
         </div>
@@ -16,7 +16,25 @@
 <div class="new-question-modal hide">
   <div class="modal-inner-cont">
 
-    <h1>Add Questions for your Survey</h1>
+    <form id="add-question">
+      Question:
+      <input type="text" class="query" id="survey_questions_attributes_0_query"><br>
+      Description:
+      <input type="text" class="description" id="survey_questions_attributes_0_description"><br>
+      Required field:
+      <input type="checkbox" class="required" id="survey_questions_attributes_0_required"><br>
+      Query type:
+      <input type="text" class="query-type" id="survey_questions_attributes_0_query_type"><br>
+      Position:
+      <input type="text" class="position" id="survey_questions_attributes_0_position"><br>
+      <button type="submit">Submit</button>
+    </form>
+  
+ </div>
+</div>
+
+<div class="hide">
+   <h1>Add Question for your Survey</h1>
     <%= form_for(@survey) do |f| %>
       <%= f.fields_for(:questions) do |ff| %>
         <div class="field">
@@ -47,6 +65,4 @@
 
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
     <%= link_to 'Back', surveys_path %>
-
- </div>
-</div
+</div>
