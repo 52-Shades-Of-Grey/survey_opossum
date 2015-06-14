@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, except: [:create]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
@@ -26,12 +26,18 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(answer_params)
-    @current_question = Question.find_by_id(params[:answer][:question_id])
-    @current_survey = Survey.find_by_id(@current_question.id)
+    current_question = Question.find_by_id(params[:answer][:question_id])
+    current_survey = Survey.find_by_id(current_question.survey_id)
+
+    if current_question.required == true && @answer.response.blank?
+      redirect_to "#{root_url}surveys/responses/#{current_survey.id}", notice: 'Answer required, please try again.'
+      return false
+    end
+    
     respond_to do |format|
       if @answer.save
         session[:counter] += 1
-        format.html { redirect_to "#{root_url}surveys/responses/#{@current_survey.id}", notice: 'Answer was successfully created.' }
+        format.html { redirect_to "#{root_url}surveys/responses/#{current_survey.id}", notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }

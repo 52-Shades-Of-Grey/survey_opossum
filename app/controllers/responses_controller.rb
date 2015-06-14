@@ -2,7 +2,8 @@ class ResponsesController < ApplicationController
   def new
     @survey = Survey.find_by_id(params[:id])
     if session[:counter] > @survey.questions.count
-      redirect_to sessions_login_path, notice: 'Finished the survey, give yourself a cookie.'
+      session[:counter] = 1
+      redirect_to responses_success_path, notice: 'Finished the survey, give yourself a cookie.'
     else
       session[:counter] ||= 1
     end
@@ -11,6 +12,7 @@ class ResponsesController < ApplicationController
     @answer = Answer.new
   end
 
-  def create
+  def success
+
   end
 end
