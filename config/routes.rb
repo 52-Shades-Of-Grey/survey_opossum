@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'surveys/responses/:id' => 'responses#new'
-
-  get 'responses/create'
-
+  get 'responses/success'
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'

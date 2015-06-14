@@ -1,6 +1,10 @@
 <h1>Responses#new</h1>
   <p><%= @question.query %></p>
-  <p><%= @question.required%></p>
+  <% if @question.required == true%>
+    <p>question required</p>
+  <% else %>
+    <p>question not required</p>
+  <% end %>
   <p><%= @question.query_type %></p>
   <%= form_for(@answer) do |f| %>
     <% if @answer.errors.any? %>
