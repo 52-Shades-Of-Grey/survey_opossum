@@ -10,24 +10,44 @@ $(function (){
 	});
 
 
+	var counter = 0;
+
 	$('#add-question').on('submit', function(e) {
 		e.preventDefault();
 
-		
 		var query = $('.query').val();
 		var description = $('.description').val();
 		var required = $('.required').val();
 		var queryType = $('.query-type').val();
 		var position = $('.position').val();
 
-		var newLi = '<li class="new-question-li">' + query + description + required + queryType + position + '<button class="question-delete">X</button></li>'
+
+		var input = $('#survey_questions_attributes_0_query');
+		counter ++;	
+		input.attr('id', 'survey_questions_attributes_' + counter + '_query');
+		input.attr('value', query);
+
+
+
+		var newLi = '<li class="new-question-li">' + query + '<button class="question-delete">X</button></li>'
 
 		$('.question-ul').append(newLi).html();
 		
 		$('.new-question-modal').removeClass("show");
 		$('.new-question-modal').addClass(" hide");
 
-	})
+			
+		var queryHtml = "<input type='text' id='survey_questions_attributes_0_query'>";
+
+		$('.edit_survey').append(queryHtml);	
+
+		console.log(counter);
+
+
+
+
+	});
+
 
 
 
