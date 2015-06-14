@@ -17,4 +17,8 @@ class ResponsesController < ApplicationController
   def success
 
   end
+
+  def all_surveys
+    @surveys = Survey.all
+  end
 end

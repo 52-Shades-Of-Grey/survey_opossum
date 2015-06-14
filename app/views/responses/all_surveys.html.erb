@@ -1,0 +1,6 @@
+<h1>You've made it</h1>
+<% @surveys.each do |survey| %>
+  <div class="blah">
+    <%= link_to "#{survey.name}", "#{root_path}/surveys/surveys/responses/#{survey.id}" %>
+  </div>
+<% end %>

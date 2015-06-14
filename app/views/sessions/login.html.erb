@@ -46,7 +46,7 @@
         <%= button_to 'New User', new_user_path, :class => "btn-new-user", :method => :get %>
       </div>
       <div class="btn-survey-list">
-        <button class="btn-take-surveys">Take a Survey</button>
+        <button class="btn-take-surveys"><%= link_to 'Take a Survey', all_surveys_path %></button>
       </div>
 
     </form>

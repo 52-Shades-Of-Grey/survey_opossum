@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'sessions/login'
   get 'sessions/logout'
   root 'surveys#index'
+  get 'all_surveys' => 'responses#all_surveys'
   resources :questions
   resources :surveys
   resources :answers
