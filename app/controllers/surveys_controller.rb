@@ -26,6 +26,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    @user = User.find_by_id(session[:user_id])
   end
 
   # POST /surveys
