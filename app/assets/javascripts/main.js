@@ -23,11 +23,16 @@ $(function (){
 
 
 		var input = $('#survey_questions_attributes_0_query');
+		// var label = input.siblings('for');
+		// console.log(label);
+
 		counter ++;	
+
+		
+		// label.attr('for', 'lfbaslkfjsdlj');
 		input.attr('id', 'survey_questions_attributes_' + counter + '_query');
+		input.attr('name', '[survey_questions_attributes_][' + counter + '][_query]');
 		input.attr('value', query);
-
-
 
 		var newLi = '<li class="new-question-li">' + query + '<button class="question-delete">X</button></li>'
 
@@ -37,14 +42,9 @@ $(function (){
 		$('.new-question-modal').addClass(" hide");
 
 			
-		var queryHtml = "<input type='text' id='survey_questions_attributes_0_query'>";
+		var queryHtml = "<div class='field'><label for='survey_questions_attributes_" + (counter + 1) + "_query'>Query</label><br><input type='text' id='survey_questions_attributes_0_query'></div>";
 
-		$('.edit_survey').append(queryHtml);	
-
-		console.log(counter);
-
-
-
+		$('.field:first').before(queryHtml);	
 
 	});
 
@@ -64,20 +64,20 @@ $(function (){
 // 		var allInputs = ($('.edit_survey :input'));
 // 		var allLabels = ($('.edit_survey label'));	
 
-// 		allInputs.each(function() {
-// 			if ((this.id || this.name) && (this.name != 'utf8')) {
-// 				this.id = this.id.replace(/[0-9]/g, counter);
-// 				this.name = this.name.replace(/[0-9]/g, counter);
-// 			}
-// 		});
+		allInputs.each(function() {
+			if ((this.id || this.name) && (this.name != 'utf8')) {
+				this.id = this.id.replace(/[0-9]/g, counter);
+				this.name = this.name.replace(/[0-9]/g, counter);
+			}
+		});
 
-// 		allLabels.each(function() {
-// 			if ($(this).attr('for')) {
-// 				var self = $(this);
-// 				var forAttr = $(this).attr('for')
-// 				self.attr('for', forAttr.replace(/[0-9]/g, counter));
-// 			}
-// 		});
+		allLabels.each(function() {
+			if ($(this).attr('for')) {
+				var self = $(this);
+				var forAttr = $(this).attr('for')
+				self.attr('for', forAttr.replace(/[0-9]/g, counter));
+			}
+		});
 
 // 		var query = $('#survey_questions_attributes_' + counter + '_query');
 // 		var required = $('#survey_questions_attributes_' + counter + '_required');
