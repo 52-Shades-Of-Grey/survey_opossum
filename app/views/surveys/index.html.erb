@@ -1,3 +1,5 @@
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 <header class="dashboard-header">
   <div class="user-dashboard-info">
     <h1 class="dashboard-title">Welcome!</h1>
@@ -31,7 +33,7 @@
         </tr>
       </thead>
 
-    </div>
+
 
   <tbody>
     <% @user.surveys.each do |survey| %>
@@ -52,22 +54,23 @@
   </tbody>
 </table>
 
-<div class="action-events">
-<br>
-<div class="btn-survey-list">
-    <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
+    <br>
+
+  </div>
 </div>
 
-</div>
-<%= link_to 'New Survey', new_survey_path %>
-<%= link_to 'Update Account Info', edit_user_path(@user.id) %>
+<div class="new-survey-link">
+  <%= link_to 'New Survey', new_survey_path %>
 </div>
 
 <div class="dashboard-footer">
-  <a href="https://github.com/52-Shades-Of-Grey/survey_opossum"><i class="fa fa-github"></i>
+  <div class="logout">
+    <%= logout_button %>
+  </div>
+  <div class="action-events">
+    <%= link_to 'Take a Survey | ', all_surveys_path, :class => "take-survey-link", :method => :get %>
+  <%= link_to 'Update Account Info', edit_user_path(@user.id) %>
+</div>
 </div>
 
 </html>
-<div class="logout">
-  <%= logout_button %>
-</div>
