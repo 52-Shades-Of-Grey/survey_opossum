@@ -3,11 +3,12 @@ class ResponsesController < ApplicationController
     @survey = Survey.find_by_id(params[:id])
     if !session[:counter]
       session[:counter] = 1
+
     elsif session[:counter] > @survey.questions.count
-      session[:counter] = 1
-      redirect_to responses_success_path, notice: 'Finished the survey, give yourself a cookie.'
+        session[:counter] = 1
+        redirect_to responses_success_path, notice: 'Finished the survey, give yourself a cookie.'
     else
-      session[:counter] ||= 1
+        session[:counter] ||= 1
     end
     questions = Question.where(survey_id: @survey.id, position: session[:counter])
     @question = questions[0]
