@@ -57,9 +57,10 @@ table {
 /*stylesheet for login page*/
 
 body {
-  background-color: #e0f7fa;
+  background-color: #E0F7FA;
   font-family: Sintony;
 }
+
 button {
   cursor: pointer;
 }
@@ -72,7 +73,7 @@ button {
   text-align: center;
 }
 
-.media-object {
+#login-icon {
   z-index: 1;
   width: 7em;
   height: 7em;

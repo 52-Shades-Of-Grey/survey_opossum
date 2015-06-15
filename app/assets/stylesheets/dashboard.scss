@@ -1,0 +1,72 @@
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dashboard-header {
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #00BCD4;
+  height: 2.5em;
+  box-shadow: 0px 5px 5px 0px #888888;
+}
+
+#dashboard-icon {
+  float: left;
+  width: 3em;
+  padding-left: 0.5em;
+}
+
+.user-dashboard-info {
+  float: right;
+  color: #e0f7fa;
+}
+
+.fa-search {
+  padding-left: 1.2em;
+  padding-top: 0.5em;
+  font-size: 1.2em;
+  color: #e0f7fa;
+  padding-right: 0.5em;
+}
+
+.search-surveys {
+  text-align: center;
+  padding-right: 10em;
+  height: 1.5em;
+  border-radius: 15px;
+}
+
+.dashboard-background {
+  background-color: #E0F7FA;
+}
+
+.my-surveys {
+  margin-top: 5em;
+  box-shadow: 0px 5px 5px 0px #888888;
+}
+
+.my-surveys-header {
+  background-color: #B2EBF2;
+  padding: 0.5em;
+  text-align: center;
+  box-shadow: 0px 5px 5px 0px #888888;
+}
+
+.my-surveys-title {
+  font-size: 1.8em;
+}
+
+.my-surveys-list, .take-surveys-list {
+  margin-top: 0;
+  padding-bottom: 10em;
+  background-color: #FFFFFE;
+}
+
+.action-events {
+
+}
