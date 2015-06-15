@@ -29,40 +29,54 @@
       <input type="text" class="position" id="survey_questions_attributes_0_position"><br>
       <button type="submit">Submit</button>
     </form>
-  
+
  </div>
 </div>
 
-<div class="hide">
+<!-- <div class="hide"> -->
    <h1>Add Question for your Survey</h1>
     <%= form_for(@survey) do |f| %>
-      <%= f.fields_for(:questions) do |ff| %>
-        <div class="field">
-          <%= ff.label :query %><br>
-          <%= ff.text_field :query %>
+      <div id="questions-holder">
+        <br>
+        <br>
+        <br>
+        <h1>FILL ME IN</h1>
+        <br>
+        <div class="fields-for">
+          <p>----------------------</p>
+          <%= f.fields_for(:questions) do |ff| %>
+            <div class="question-container">
+              <div class="field">
+                <%= ff.label :query %><br>
+                <%= ff.text_field :query %>
+              </div>
+              <div class="field">
+                <%= ff.label :description %><br>
+                <%= ff.text_field :description %>
+              </div>
+              <div class="field">
+                <%= ff.label :required, 'Make required?' %><br>
+                <%= ff.check_box :required %>
+              </div>
+              <div class="field">
+                <%= ff.label :query_type %><br>
+                <%= ff.text_field :query_type %>
+              </div>
+              <div class="field">
+                <%= ff.label :position %><br>
+                <%= ff.text_field :position %>
+              </div>
+            </div>
+          <% end %>
         </div>
-        <div class="field">
-          <%= ff.label :description %><br>
-          <%= ff.text_field :description %>
-        </div>
-        <div class="field">
-          <%= ff.label :required, 'Make required?' %><br>
-          <%= ff.check_box :required %>
-        </div>
-        <div class="field">
-          <%= ff.label :query_type %><br>
-          <%= ff.text_field :query_type %>
-        </div>
-        <div class="field">
-          <%= ff.label :position %><br>
-          <%= ff.text_field :position %>
-        </div>
-      <% end %>
+      </div>
+
       <div class="actions">
         <%= f.submit :Submit %>
       </div>
     <% end %>
 
+
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
     <%= link_to 'Back', surveys_path %>
-</div>
+<!-- </div> -->
