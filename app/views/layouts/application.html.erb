@@ -3,6 +3,8 @@
 <head>
   <title>SurveyOpossum</title>
   <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="http://www.favicon-generator.org/favicon-generator/htdocs/favicons/2015-06-14/967066f5e6649276d2dc992ecdbde3bf.ico.png" type="image/x-icon">
+  <link rel="icon" href="http://www.favicon-generator.org/favicon-generator/htdocs/favicons/2015-06-14/967066f5e6649276d2dc992ecdbde3bf.ico.png" type="image/x-icon">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,5 +15,8 @@
 <div class="logout">
   <%= link_to "Logout", sessions_logout_path if session[:user_id] %></br>
 </div>
+<div class="login-page-link">
+  <%= link_to_unless_current("Login Page", sessions_login_path) %>
+<div>
 </body>
 </html>

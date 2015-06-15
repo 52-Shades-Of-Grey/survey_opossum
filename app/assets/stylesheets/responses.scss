@@ -1,3 +1,85 @@
 // Place all the styles related to the Responses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.survey-header {
+  background: #e0f7fa;
+}
+
+.survey-outer-container {
+	background-color: #FFFFFE;
+	width: 80%;
+	margin: 0 auto;
+	box-shadow: 5px 10px 10px 5px #888888;
+}
+
+.content {
+	margin-top: 2em;
+	text-align: center;
+}
+
+.survey-title {
+	font-size: 2em;
+	color: #00BCD4;
+	padding: 0.5em 0 0.5em 0;
+}
+
+.btn-submit-survey {
+	font-size: 1.5em;
+	border-radius: 50%;
+	border: 0;
+	width: 100px;
+	height: 100px;
+	color: white;
+	background-color: #00BCD4;
+	margin-bottom: -1.85em;
+  margin-left: 6.5em;
+  cursor: pointer;
+}
+
+.btn-submit-survey:hover {
+	background-color: #DE4D4E;
+}
+
+.tf-survey-answer, .short-survey-question, .long-survey-question  {
+  background-color: #ECF0F1;
+  width: 60%;
+  margin: 0.5em auto;
+  padding: 1.5em;
+  padding-top: 1em;
+  margin-top: 3em;
+}
+
+.short-answer, .long-answer {
+  width: 35em;
+  height: 10em;
+  padding: 0.5em;
+  font-size: 0.8em;
+}
+
+.required-question {
+  display: inline-block;
+}
+
+.question {
+  float: left;
+  font-style: italic;
+  font-size:1.5em;
+  padding-right: 0.5em;
+}
+
+.asterix {
+  float: right;
+  color: red;
+}
+
+.survey-type {
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+.short-response {
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
+}
