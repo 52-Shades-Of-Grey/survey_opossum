@@ -16,7 +16,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
-    @survey.questions.build
+    @survey.questions.build(position: 0)
   end
 
   # GET /surveys/new
