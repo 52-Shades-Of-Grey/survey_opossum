@@ -7,6 +7,15 @@ $(function (){
 		allQuestionCont.not(':last').hide();
 	};	 
 
+	var clearValues = function () {
+		var allQuestionCont = $('.outer-container').find('.question-container');
+		var lastQuest = allQuestionCont.last();	
+		var lastInputs = lastQuest.find('input');
+		for (i = 0; i < lastInputs.length; i++) {
+			lastInputs[i].value = '';
+		}
+	};
+
 	hideQuestions();
 
 	$(".btn-new-question").on('click', function () {
@@ -41,7 +50,6 @@ $(function (){
 				this.value = (counter+1);
 			}
 		});
-
 
 		allLabels.each(function() {
 			if ($(this).attr('for')) {
