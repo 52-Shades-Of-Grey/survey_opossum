@@ -2,50 +2,13 @@
     <div class="content">
       <div class="survey-header">
       <h1 class="survey-title"><%= @survey.name %></h1>
-        <div class="btn-container">
-          <button class="btn-new-question">Add Question</button>
-        </div>
 
-      </div>
-        <ul class="question-ul">
-        </ul>
-        <button class="btn-create-survey">Submit</button>
-  </div>
-</div>
-
-<div class="new-question-modal hide">
-  <div class="modal-inner-cont">
-
-    <form id="add-question">
-      Question:
-      <input type="text" class="query" id="survey_questions_attributes_0_query"><br>
-      Description:
-      <input type="text" class="description" id="survey_questions_attributes_0_description"><br>
-      Required field:
-      <input type="checkbox" class="required" id="survey_questions_attributes_0_required"><br>
-      Query type:
-      <input type="text" class="query-type" id="survey_questions_attributes_0_query_type"><br>
-      Position:
-      <input type="text" class="position" id="survey_questions_attributes_0_position"><br>
-      <button type="submit">Submit</button>
-    </form>
-
- </div>
-</div>
-
-<!-- <div class="hide"> -->
-   <h1>Add Question for your Survey</h1>
     <%= form_for(@survey) do |f| %>
       <div id="questions-holder">
-        <br>
-        <br>
-        <br>
-        <h1>FILL ME IN</h1>
-        <br>
         <div class="fields-for">
-          <p>----------------------</p>
           <%= f.fields_for(:questions) do |ff| %>
             <div class="question-container">
+              <h1>Add You Question</h1>
               <div class="field">
                 <%= ff.label :query %><br>
                 <%= ff.text_field :query %>
@@ -60,23 +23,32 @@
               </div>
               <div class="field">
                 <%= ff.label :query_type %><br>
-                <%= ff.text_field :query_type %>
-              </div>
-              <div class="field">
-                <%= ff.label :position %><br>
-                <%= ff.text_field :position %>
+                <%= ff.select (:query_type) do %>
+                  <% [["True/False","yes_no"],["Short Answer","short_answer"],["Long Answer","long_answer"]].each do |c| -%>
+                  <%= content_tag(:option, c.first, value: c.last) %>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           <% end %>
         </div>
       </div>
 
-      <div class="actions">
+      <div class="actions hide">
         <%= f.submit :Submit %>
       </div>
     <% end %>
 
+    <div class="btn-container">
+         <button class="btn-new-question">Add Question</button>
+    </div>
 
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
     <%= link_to 'Back', surveys_path %>
-<!-- </div> -->
+
+      </div>
+        <ul class="question-ul">
+        </ul>
+        <button class="btn-create-survey">Submit</button>
+  </div>
+</div>
