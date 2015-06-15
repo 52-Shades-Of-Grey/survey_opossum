@@ -1,4 +1,3 @@
-alert("loaded page")
 // $(function (){
 // 	$("btn-new-question").on('click', function() {
 // 		alert("it worked!");
@@ -14,7 +13,6 @@ var counter = 0;
 $(function (){
 
 	$(".btn-new-question").on('click', function () {
-		alert("new button click");
 		var clone = $(".question-container:last").clone();
 		$(".question-container:last").after(clone);
 

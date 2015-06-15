@@ -41,10 +41,10 @@
 
         <!-- <button class="btn-user-login">Login</button> -->
       <div class="btn-new-user">
-        <%= button_to 'New User', new_user_path, :class => "btn-new-user", :method => :get %>
+        <%= link_to 'New User', new_user_path, :class => "btn-new-user" %>
       </div>
       <div class="btn-survey-list">
-          <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
+          <%= link_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys"%>
       </div>
 
     </form>
