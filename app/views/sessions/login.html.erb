@@ -20,11 +20,7 @@
     <div class="login-form">
     <div class="login-info">
 
-<<<<<<< HEAD
-      <div class="email">
-=======
       <div class="email" type="input">
->>>>>>> 462f41b145b2588e0da3bc7679cd23165d82d7a0
         <%= text_field_tag :email, nil, :placeholder => 'Email' %>
       </div>
 
@@ -45,10 +41,10 @@
 
         <!-- <button class="btn-user-login">Login</button> -->
       <div class="btn-new-user">
-        <%= button_to 'New User', new_user_path, :class => "btn-new-user", :method => :get %>
+        <%= link_to 'New User', new_user_path, :class => "btn-new-user" %>
       </div>
       <div class="btn-survey-list">
-          <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
+          <%= link_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys"%>
       </div>
 
     </form>

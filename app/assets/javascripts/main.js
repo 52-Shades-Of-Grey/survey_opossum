@@ -2,7 +2,7 @@ var counter = 0;
 
 $(function (){
 
-	$('.question-container').not(':last').hide();
+	// $('.question-container').not(':last').hide();
 
 	$(".btn-new-question").on('click', function () {
 
@@ -13,6 +13,7 @@ $(function (){
 
 		var lastContainer = $(".question-container:last");
 		allInputs = lastContainer.find('input');
+		allSelects = lastContainer.find('select');
 		allLabels = lastContainer.find('label');
 
 
@@ -21,7 +22,21 @@ $(function (){
 				this.id = this.id.replace(/[0-9]+/g, counter);
 				this.name = this.name.replace(/\[[0-9]+\]/g, "[" + counter + "]");
 			}
+			if (this.type == "hidden") {
+				this.value = (counter+1);
+			}
 		});
+
+		allSelects.each(function() {
+			if ((this.id || this.name) && (this.name != 'utf8')) {
+				this.id = this.id.replace(/[0-9]+/g, counter);
+				this.name = this.name.replace(/\[[0-9]+\]/g, "[" + counter + "]");
+			}
+			if (this.type == "hidden") {
+				this.value = (counter+1);
+			}
+		});
+
 
 		allLabels.each(function() {
 			if ($(this).attr('for')) {

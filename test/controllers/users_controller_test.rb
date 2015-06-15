@@ -8,8 +8,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should get index" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:users)
+    assert_redirected_to user_path(@user.id)
   end
 
   test "should get new" do

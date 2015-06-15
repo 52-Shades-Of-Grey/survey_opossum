@@ -2,7 +2,7 @@
     <div class="content">
       <div class="survey-header">
       <h1 class="survey-title"><%= @survey.name %></h1>
-        
+
     <%= form_for(@survey) do |f| %>
       <div id="questions-holder">
         <div class="fields-for">
@@ -23,7 +23,14 @@
               </div>
               <div class="field">
                 <%= ff.label :query_type %><br>
-                <%= ff.text_field :query_type %>
+                <%= ff.select (:query_type) do %>
+                  <% [["True/False","yes_no"],["Short Answer","short_answer"],["Long Answer","long_answer"]].each do |c| -%>
+                  <%= content_tag(:option, c.first, value: c.last) %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="field">
+                <%= ff.hidden_field :position %>
               </div>
             </div>
           <% end %>
@@ -36,7 +43,7 @@
     <% end %>
 
     <div class="btn-container">
-         <button class="btn-new-question">Add Question</button>
+       <button class="btn-new-question">Add Question</button>
     </div>
 
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
@@ -48,5 +55,3 @@
         <button class="btn-create-survey">Submit</button>
   </div>
 </div>
-
-
