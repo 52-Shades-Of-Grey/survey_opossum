@@ -1,7 +1,7 @@
 <header class="dashboard-header">
   <div class="user-dashboard-info">
     <h1 class="dashboard-title">Welcome!</h1>
-    <h3 class="user-name">Dynamically Generated Username</h3>
+    <h3 class="user-name"><%= @user.name %></h3>
   </div>
 
     <%= image_tag asset_path('Drawing.png'), class: "media-object", id: "dashboard-icon"%>
@@ -42,6 +42,8 @@
         <td><%= survey.published %></td>
         <% if survey.published == true %>
           <td><%= survey.url %></td>
+        <% else %>
+          <td></td>
         <% end %>
         <td><%= link_to 'View', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -61,4 +63,11 @@
 <%= link_to 'Update Account Info', edit_user_path(@user.id) %>
 </div>
 
+<div class="dashboard-footer">
+  <a href="https://github.com/52-Shades-Of-Grey/survey_opossum"><i class="fa fa-github"></i>
+</div>
+
 </html>
+<div class="logout">
+  <%= logout_button %>
+</div>
