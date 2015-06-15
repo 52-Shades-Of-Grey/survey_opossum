@@ -64,7 +64,7 @@ button {
   cursor: pointer;
 }
 
-header {
+.login-header {
   margin: 0 auto;
   padding: 1em;
   background-color: #00BCD4;
@@ -72,13 +72,13 @@ header {
   text-align: center;
 }
 
-img {
-  position: absolute;
+.media-object {
   z-index: 1;
   width: 7em;
   height: 7em;
-  margin-left: 0.6em;
-  margin-top: 0.6em;
+	margin-top: 0.1em;
+	border: 0.6em solid #00BCD4;
+	border-radius: 50%;
 }
 
 .pg-title {
@@ -87,16 +87,16 @@ img {
   color: #EEEEEF;
 }
 
-.header-fake-btn {
-  width: 3em;
-  border-radius: 50%;
-  border: 0;
-  width: 12em;
-  height: 12em;
-  background-color: #00BCD4;
-  margin-bottom: 1em;
-	cursor: none;
-}
+// .header-fake-btn {
+//   width: 3em;
+//   border-radius: 50%;
+//   border: 0;
+//   width: 12em;
+//   height: 12em;
+//   background-color: #00BCD4;
+//   margin-bottom: 1em;
+// 	cursor: none;
+// }
 
 .login-form {
   margin-top: 12em;
