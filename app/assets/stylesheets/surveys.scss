@@ -83,6 +83,7 @@ button:focus {
 
 .survey-header {
 	background-color: #e0f7fa;
+	padding-bottom : 4em;
 }
 
 .new-question-li {
@@ -151,4 +152,8 @@ button:focus {
 
 .show {
 	display: block;
+}
+
+.question-container input {
+   margin: 1em;
 }
