@@ -30,10 +30,14 @@
         </div>
       </div>
 
-      <div class="actions">
+      <div class="actions hide">
         <%= f.submit :Submit %>
       </div>
     <% end %>
+
+    <div class="btn-container">
+         <button class="btn-new-question">Add Question</button>
+    </div>
 
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
     <%= link_to 'Back', surveys_path %>
