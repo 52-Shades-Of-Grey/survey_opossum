@@ -5,7 +5,7 @@ $(function (){
 	var hideQuestions = function() {
 		var allQuestionCont = $('.outer-container').find('.question-container');
 		allQuestionCont.not(':last').hide();
-	};	 
+	};
 
 	var clearValues = function () {
 		var allQuestionCont = $('.outer-container').find('.question-container');
@@ -37,7 +37,7 @@ $(function (){
 				this.name = this.name.replace(/\[[0-9]+\]/g, "[" + counter + "]");
 			}
 			if (this.type == "hidden") {
-				this.value = (counter+1);
+				this.value = (counter);
 			}
 		});
 
@@ -47,7 +47,7 @@ $(function (){
 				this.name = this.name.replace(/\[[0-9]+\]/g, "[" + counter + "]");
 			}
 			if (this.type == "hidden") {
-				this.value = (counter+1);
+				this.value = (counter);
 			}
 		});
 
