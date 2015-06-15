@@ -55,6 +55,10 @@
 
 <div class="action-events">
 <br>
+<div class="btn-survey-list">
+    <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
+</div>
+
 <%= link_to 'New Survey', new_survey_path %>
 <%= link_to 'Update Account Info', edit_user_path(@user.id) %>
 </div>
