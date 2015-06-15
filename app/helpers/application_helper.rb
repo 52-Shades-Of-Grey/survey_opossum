@@ -1,7 +1,7 @@
 module ApplicationHelper
-  def login_button
-    if params[:action] != "get" && params[:controller] != "sessions"
-      link_to_unless_current("Login Page", sessions_login_path)
+  def login_page
+    if params[:action] == "all_surveys" && params[:controller] == "responses"
+      link_to "Login Page", sessions_login_path
     end
   end
 
