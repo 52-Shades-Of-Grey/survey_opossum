@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'surveys/responses/:id' => 'responses#new'
+  get 'responses/:id' => 'responses#new', as: 'new_response'
   get 'responses/success'
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
   root 'surveys#index'
+  get 'all_surveys' => 'responses#all_surveys'
   resources :questions
   resources :surveys
   resources :answers

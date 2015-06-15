@@ -6,14 +6,18 @@
         <%= @survey.name %>
       </div>
 
-      <p><%= @question.query %>?</p>
-      <% if @question.required == true%>
-      <p>*</p>
-      <% else %>
-      <p> </p>
-      <% end %>
+      <div class="required-question">
+        <p class="question"><%= @question.query %>?</p>
+        <% if @question.required == true%>
+        <p class="asterix"> *</p>
+      </div>
 
-      <p><%= @question.query_type %></p>
+        <% else %>
+        <p> </p>
+        <% end %>
+      <div class="survey-type">
+        <p><%= @question.query_type %></p>
+      </div>
     </div>
 
     <%= form_for(@answer) do |f| %>
@@ -30,57 +34,22 @@
       </div>
     <% end %>
 
-  <div class="field">
-    <%= f.label :response %><br>
-    <%= f.text_area :response %>
+  <div class="short-survey-question">
+    <div class="short-response">
+      <%= f.text_area :response %>
+    </div>
   </div>
+
   <div class="field">
-    <%= f.label :question_id %>
     <%= f.hidden_field :question_id, :value => "#{@question.id}" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="btn-submit-survey">
+    <%= f.submit("Add", :class => "btn-submit-survey" )%>
   </div>
 <% end %>
 
-      <form class="user-survey-form">
-
-        <div class="tf-survey-answer">
-
-          <p class="tf-question">!!!!Question that is dynamically generated!!!!</p>
-
-          <label>
-            <input name="tf-answer" type="radio" placeholder="true" value="true-answer">
-            True
-          </label>
-
-          <label>
-            <input name="tf-answer" type="radio" placeholder="false" value="false-answer">
-            False
-          </label>
-
-        </div>
-
-        <div class="short-survey-question">
-
-          <p class="short-question">!!!!Question that is dynamically generated!!!!</p>
-
-          <input class="short-answer" placeholder="Write your answer here">
-        </div>
-
-        <div class="long-survey-question">
-
-          <p class="long-question">!!!!Question that is dynamically generated!!!!</p>
-
-          <input class="long-answer" placeholder="Write your answer here">
-        </div>
-
-    <button class="btn-submit-survey">Submit</button>
-
-  </form>
-
     </div>
-</div>
 
 </body>
 </html>

@@ -19,7 +19,7 @@
 }
 
 .survey-title {
-	font-size: 4em;
+	font-size: 2em;
 	color: #00BCD4;
 	padding: 0.5em 0 0.5em 0;
 }
@@ -33,6 +33,8 @@
 	color: white;
 	background-color: #00BCD4;
 	margin-bottom: -1.85em;
+  margin-left: 6.5em;
+  cursor: pointer;
 }
 
 .btn-submit-survey:hover {
@@ -45,6 +47,7 @@
   margin: 0.5em auto;
   padding: 1.5em;
   padding-top: 1em;
+  margin-top: 3em;
 }
 
 .short-answer, .long-answer {
@@ -52,4 +55,31 @@
   height: 10em;
   padding: 0.5em;
   font-size: 0.8em;
+}
+
+.required-question {
+  display: inline-block;
+}
+
+.question {
+  float: left;
+  font-style: italic;
+  font-size:1.5em;
+  padding-right: 0.5em;
+}
+
+.asterix {
+  float: right;
+  color: red;
+}
+
+.survey-type {
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+.short-response {
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
 }

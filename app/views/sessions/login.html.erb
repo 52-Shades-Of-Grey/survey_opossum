@@ -11,11 +11,9 @@
 </head>
 <body>
 
-  <header>
+  <header class="login-header">
     <h1 class="pg-title">OPAWESOME</h1>
-    <img src='#'>
-      <%= image_tag asset_path('Drawing.jpg'), class: "media-object" %>
-    <button class="header-fake-btn"></button>
+    <%= image_tag asset_path('Drawing.png'), class: "media-object" %>
   </header>
 
     <%= form_tag do %>
@@ -46,7 +44,7 @@
         <%= button_to 'New User', new_user_path, :class => "btn-new-user", :method => :get %>
       </div>
       <div class="btn-survey-list">
-        <button class="btn-take-surveys">Take a Survey</button>
+          <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
       </div>
 
     </form>

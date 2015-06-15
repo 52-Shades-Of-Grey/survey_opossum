@@ -36,7 +36,7 @@ class SurveysController < ApplicationController
     @survey.user_id = session[:user_id]
     respond_to do |format|
       if @survey.save
-        @survey.url = "#{request.original_url}/responses/#{@survey.id}"
+        @survey.url = "#{root_url}/responses/#{@survey.id}"
         @survey.save
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
