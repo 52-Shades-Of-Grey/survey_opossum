@@ -23,19 +23,20 @@ button:focus {
 
 .outer-container {
 	background-color: #FFFFFE;
-	width: 80%;
+	width: 60%;
 	margin: 0 auto;
 	box-shadow: 5px 10px 10px 5px #888888;
+	padding-bottom: 3em;
 }
 
 .content {
-	margin-top: 2em;
+	margin-top: 1em;
 	text-align: center;
 }
 
 .survey-title {
-	font-size: 4em;
-	color: #00BCD4;
+	font-size: 2em;
+	color: #FFFFFE;
 	padding: 0.5em 0 0.5em 0;
 }
 
@@ -50,31 +51,26 @@ button:focus {
 	width: 14em;
 	padding: 1em;
 	background-color: #00BCD4;
-	color: #eee;
+	color: #FFFFFE;
 	border: 0;
 	font-size: 1em;
 }
 
 .btn-new-question:hover {
-	background-color: #DE4D4E;
-}
-
-.new-question-li {
-	color: #888888;
-	padding: 1em;
-	margin: 1em;
-	position: relative;
+	background-color: #FFFFFE;
+	color: #00BCD4;
+	border: 1px solid #00BCD4;
 }
 
 .btn-create-survey {
-	font-size: 1.5em;
-	border-radius: 50%;
-	border: 0;
-	width: 100px;
-	height: 100px;
-	color: white;
+	margin-top: 1em;
+	overflow: hidden;
+	width: 14em;
+	padding: 1em;
 	background-color: #00BCD4;
-	margin-bottom: -1.85em;
+	color: #eee;
+	border: 0;
+	font-size: 1em;
 }
 
 .btn-create-survey:hover {
@@ -82,15 +78,13 @@ button:focus {
 }
 
 .survey-header {
-	background-color: #e0f7fa;
-	padding-bottom : 4em;
+	background-color: #00BCD4;
+	padding-bottom : 1em;
 }
 
-.new-question-li {
-	background-color: #ECF0F1;
-	width: 60%;
-	margin: 1em auto;
-	padding: 2em;
+.question-container {
+	margin-top: 2em;
+	padding-bottom: 3em;
 }
 
 .question-delete {
@@ -108,6 +102,13 @@ button:focus {
 .question-delete:hover {
 	background-color: #DE4D4E;
 	color: #FFFFFE;
+}
+
+.new-survey-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 0.5em;
 }
 
 // MODAL

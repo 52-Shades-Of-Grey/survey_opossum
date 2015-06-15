@@ -1,0 +1,39 @@
+.edit-users-main {
+  text-align: center;
+}
+
+.edit-users-header {
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-top: 0.5em;
+  padding: 1em;
+  font-size: 2em;
+  background-color: #00BCD4;
+  color: #FFFFFE;
+  box-shadow: 0px 5px 5px 0px #888888;
+}
+
+.edit-user-form {
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #FFFFFE;
+  box-shadow: 0px 5px 5px 0px #888888;
+}
+
+.edit-user-form input {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 15em;
+  padding: 0.5em;
+}
+
+.edit-users-back {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+}
