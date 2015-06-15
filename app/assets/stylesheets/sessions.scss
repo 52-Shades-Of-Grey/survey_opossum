@@ -65,7 +65,7 @@ button {
   cursor: pointer;
 }
 
-input {
+.login-info input {
   text-align: center;
   display: inline-block;
   height: 2em;
@@ -128,7 +128,7 @@ input {
 	display: inline-block;
 	text-decoration: none;
 	margin-top: 0.5em;
-
+	padding-top: 0.5em;
 }
 
 .take-survey-div {
