@@ -21,3 +21,11 @@ t_f = [true,false]
     end
   end
 end
+
+user = User.create!(name: "Aaron", email: "aaron@email.com", password: "password")
+survey = Survey.create!(name: "Test Survey", user_id: user.id, description: "tester", published: true)
+Question.create!(query: "whats your name", survey_id: survey.id, position: 1)
+Question.create!(query: "whats your color", survey_id: survey.id, position: 2)
+Question.create!(query: "whats your car", survey_id: survey.id, position: 3)
+Question.create!(query: "where are you from", survey_id: survey.id, position: 4)
+Question.create!(query: "whats your pet", survey_id: survey.id, position: 5)
