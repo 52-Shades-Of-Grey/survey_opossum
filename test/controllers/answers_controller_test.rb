@@ -2,9 +2,13 @@ require 'test_helper'
 
 class AnswersControllerTest < ActionController::TestCase
   setup do
+    @survey = surveys(:one)
     @answer = answers(:one)
+    @question = questions(:one)
     @user = users(:one)
     session[:user_id] = @user.id
+    @survey.user_id = @user.id
+    @question.survey_id = @survey.id
   end
 
   test "should get index" do
@@ -23,7 +27,7 @@ class AnswersControllerTest < ActionController::TestCase
       post :create, answer: { question_id: @answer.question_id, response: @answer.response }
     end
 
-    assert_redirected_to answer_path(assigns(:answer))
+    assert_redirected_to "#{root_url}responses/#{@survey.id}"
   end
 
   test "should show answer" do
