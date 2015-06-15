@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @user = User.find(session[:user_id])
+    redirect_to user_path(@user.id)
   end
 
   # GET /users/1
