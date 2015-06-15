@@ -45,16 +45,16 @@
           <%= @survey.url %></br>
         <% end %>
     <% survey_questions.order(:position).each do |quest| %>
-      <% quest.answers.each do |a| %>
-        <div>Question<%= quest.position %></div>
+      <div>Question<%= quest.position %></div>
         <%= quest.query %><br>
         <%= quest.required %><br>
         <%= quest.description %><br>
-        <p>Answer</p>
-        <%= a.response %><br>
-        <br>
+        <p>Answer(s)</p>
+        <% quest.answers.each do |a| %>
+          <%= a.response %><br>
+          <br>
+        <% end %>
       <% end %>
-    <% end %>
   <% end %>
 <% end %>
 <%= link_to 'Back', surveys_path %><br>

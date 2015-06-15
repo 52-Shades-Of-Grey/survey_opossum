@@ -1,8 +1,10 @@
 <h1>You've made it</h1>
 <br>
 <% @surveys.each do |survey| %>
-  <div class="blah">
-    <%= link_to "#{survey.name}, #{survey.description}", new_response_path(survey.id) %>
-  </div>
+  <% if survey.published == true %>
+    <div class="blah">
+      <%= link_to "#{survey.name}, #{survey.description}", new_response_path(survey.id) %>
+    </div>
+  <% end %>
 <% end %>
 <br>
