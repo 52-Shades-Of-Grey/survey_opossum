@@ -1,8 +1,45 @@
+alert("loaded page")
+// $(function (){
+// 	$("btn-new-question").on('click', function() {
+// 		alert("it worked!");
+// 		$(".fields-for").clone().appendTo(".question-holder");
+// 		});
+// });
+var counter = 0;
+
+
+
+
+
 $(function (){
 
 	$(".btn-new-question").on('click', function () {
-		$(".new-question-modal").addClass( " show" )
+		alert("new button click");
+		var clone = $(".question-container:last").clone();
+		$(".question-container:last").after(clone);
+
+		var lastContainer = $(".question-container:last");
+		allInputs = lastContainer.find('input')
+		allLabels = lastContainer.find('label')
+
+		allInputs.each(function() {
+			if ((this.id || this.name) && (this.name != 'utf8')) {
+				this.id = this.id.replace(/[0-9]+/g, counter);
+				this.name = this.name.replace(/\[[0-9]+\]/g, "[" + counter + "]");
+			}
+		});
+
+		allLabels.each(function() {
+			if ($(this).attr('for')) {
+				var self = $(this);
+				var forAttr = $(this).attr('for')
+				self.attr('for', forAttr.replace(/[0-9]+/g, counter));
+			}
+		});
+		counter++
 	});
+
+
 
 
 	$(".btn-create-survey").on('click', function() {
@@ -14,6 +51,7 @@ $(function (){
 
 	$('#add-question').on('submit', function(e) {
 		e.preventDefault();
+
 
 		var query = $('.query').val();
 		var description = $('.description').val();
@@ -37,7 +75,7 @@ $(function (){
 		var newLi = '<li class="new-question-li">' + query + '<button class="question-delete">X</button></li>'
 
 		$('.question-ul').append(newLi).html();
-		
+
 		$('.new-question-modal').removeClass("show");
 		$('.new-question-modal').addClass(" hide");
 
@@ -58,6 +96,7 @@ $(function (){
 
 
 
+<<<<<<< HEAD
 // var liNum = $('.question-ul li').length;
 // 		var counter = liNum + 1;
 
@@ -95,8 +134,35 @@ $(function (){
 
 
 
+=======
+var liNum = $('.question-ul li').length;
+		var counter = liNum + 1;
+>>>>>>> f4538fee3ff19c447aa5249ff7cdc829ba53fd50
 
+		var allInputs = ($('.edit_survey :input'));
+		var allLabels = ($('.edit_survey label'));
 
+		allInputs.each(function() {
+			if ((this.id || this.name) && (this.name != 'utf8')) {
+				this.id = this.id.replace(/[0-9]/g, counter);
+				this.name = this.name.replace(/[0-9]/g, counter);
+			}
+		});
 
+		allLabels.each(function() {
+			if ($(this).attr('for')) {
+				var self = $(this);
+				var forAttr = $(this).attr('for')
+				self.attr('for', forAttr.replace(/[0-9]/g, counter));
+			}
+		});
 
+		var query = $('#survey_questions_attributes_' + counter + '_query');
+		var required = $('#survey_questions_attributes_' + counter + '_required');
+		var queryType = $('#survey_questions_attributes_' + counter + '_query_type');
+		var position = $('#survey_questions_attributes_' + counter + '_position');
 
+		var queryVal = query.val();
+		var requiredVal = required.val();
+		var queryTypeVal = queryType.val()
+		var positionVal = position.val();
