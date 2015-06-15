@@ -65,6 +65,14 @@ button {
   cursor: pointer;
 }
 
+input {
+  text-align: center;
+  display: inline-block;
+  height: 2em;
+  font-size: 1.5em;
+  border-radius: 10px;
+}
+
 .login-header {
   margin: 0 auto;
   padding: 1em;
@@ -88,17 +96,6 @@ button {
   color: #EEEEEF;
 }
 
-// .header-fake-btn {
-//   width: 3em;
-//   border-radius: 50%;
-//   border: 0;
-//   width: 12em;
-//   height: 12em;
-//   background-color: #00BCD4;
-//   margin-bottom: 1em;
-// 	cursor: none;
-// }
-
 .login-form {
   margin-top: 12em;
   text-align: center;
@@ -106,14 +103,6 @@ button {
 
 .login-info {
   padding-bottom: 2em;
-}
-
-input {
-  text-align: center;
-  display: inline-block;
-  height: 2em;
-  font-size: 1.5em;
-  border-radius: 10px;
 }
 
 .btn-user-login {
@@ -130,33 +119,37 @@ input {
 
 .btn-new-user {
 	width: 10em;
-	height: 2em;
+	height: 1.5em;
 	font-size: 1em;
 	border-style: none;
 	color: white;
 	background: #00BCD4;
 	cursor: pointer;
 	display: inline-block;
+	text-decoration: none;
+	margin-top: 0.5em;
 
+}
+
+.take-survey-div {
+	margin-top: 1.5em;
 }
 
 .btn-survey-list {
-  margin-top: 1.5em;
-}
-.btn-take-surveys {
-  width: 20em;
-  height: 2em;
-  font-size: 1em;
-  border-style: none;
-  color: #00BCD4;
-  background: #FFFFFE;
-  border: 1px solid #00BCD4;
+	text-decoration: none;
+	background-color: #FFFFFE;
+	color: #00BCD4;
+	border: 1px solid #00BCD4;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 6.9em;
+	padding-right: 6.9em;
 }
 
-.btn-take-surveys:hover {
-  background: #00BCD4;
-  color: #FFFFFE;
-  border: 1px solid #FFFFFE;
+.btn-survey-list:hover {
+	background-color: #00BCD4;
+	color: #FFFFFE;
+	border: 1px solid #FFFFFE;
 }
 
 .btn-user-login:hover, .btn-new-user:hover {
