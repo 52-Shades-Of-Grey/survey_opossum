@@ -29,6 +29,9 @@
                   <% end %>
                 <% end %>
               </div>
+              <div class="field">
+                <%= ff.hidden_field :position %>
+              </div>
             </div>
           <% end %>
         </div>
@@ -40,7 +43,7 @@
     <% end %>
 
     <div class="btn-container">
-         <button class="btn-new-question">Add Question</button>
+       <button class="btn-new-question">Add Question</button>
     </div>
 
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
