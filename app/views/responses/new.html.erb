@@ -40,14 +40,49 @@
         <%= f.text_area :response %>
       </div>
     </div>
+    <% end %>
+  <% if @question.query_type == "short_answer" %>
+    <div class="short-survey-question">
+      <div class="short-response">
+        <%= f.text_field :response %>
+      </div>
+    </div>
+  <% elsif @question.query_type == "yes_no" %>
+    <div class="yes_no">
+      <div class="yes_no">
+        <div class="yes">
+          <%= f.label :response, "Yes" %>
+          <%= f.radio_button :response, "yes" %>
+        </div>
+        <div class="no">
+          <%= f.label :response, "No" %>
+          <%= f.radio_button :response, "no" %>
+        </div>
+      </div>
+    </div>
+  <% else @question.query_type == "long_answer" %>
+    <div class="long-survey-question">
+      <div class="long-response">
+        <%= f.text_area :response %>
+      </div>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.hidden_field :question_id, :value => "#{@question.id}" %>
+  </div>
+>>>>>>> d8bf4ed1bf0537a0ccd3859397730422c4afc9b2
 
     <div class="field">
       <%= f.hidden_field :question_id, :value => "#{@question.id}" %>
     </div>
 
+<<<<<<< HEAD
       <%= f.submit("Add", :class => "btn-submit-survey" )%>
 
   <% end %>
 
   </div>
 </div>
+=======
+<% end %>
+>>>>>>> d8bf4ed1bf0537a0ccd3859397730422c4afc9b2
