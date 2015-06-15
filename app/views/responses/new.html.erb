@@ -1,54 +1,53 @@
-<div class="survey-outer-container">
-  <div class="content">
+<div class="survey-outer-outer-container">
+  <div class="survey-outer-container">
+    <div class="content">
 
-    <div class="survey-header">
-      <div class="survey-title">
-        <%= @survey.name %>
-      </div>
-
-      <div class="required-question">
-        <p class="question"><%= @question.query %>?</p>
-        <% if @question.required == true%>
-        <p class="asterix"> *</p>
-      </div>
-
-        <% else %>
-        <p> </p>
-        <% end %>
-      <div class="survey-type">
-        <p><%= @question.query_type %></p>
-      </div>
-    </div>
-
-    <%= form_for(@answer) do |f| %>
-      <% if @answer.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+      <div class="survey-header">
+        <div class="survey-title">
+          <%= @survey.name %>
         </div>
 
-        <ul>
-        <% @answer.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+        <div class="required-question">
+          <p class="question"><%= @question.query %>?</p>
+          <% if @question.required == true%>
+          <p class="asterix"> *</p>
+        </div>
+
+          <% else %>
+          <p> </p>
+          <% end %>
+        <div class="survey-type">
+          <p><%= @question.query_type %></p>
+        </div>
       </div>
-    <% end %>
 
-  <div class="short-survey-question">
-    <div class="short-response">
-      <%= f.text_area :response %>
+      <%= form_for(@answer) do |f| %>
+        <% if @answer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+          </div>
+
+          <ul>
+          <% @answer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <div class="short-survey-question">
+      <div class="short-response">
+        <%= f.text_area :response %>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= f.hidden_field :question_id, :value => "#{@question.id}" %>
-  </div>
-
-    <%= f.submit("Add", :class => "btn-submit-survey" )%>
-
-<% end %>
-
+    <div class="field">
+      <%= f.hidden_field :question_id, :value => "#{@question.id}" %>
     </div>
 
-</body>
-</html>
+      <%= f.submit("Add", :class => "btn-submit-survey" )%>
+
+  <% end %>
+
+  </div>
+</div>

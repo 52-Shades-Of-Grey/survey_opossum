@@ -1,6 +1,11 @@
 // Place all the styles related to the Responses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.survey-outer-outer-container {
+  background-color: #B2EBF2;
+  padding-top: 1em;
+  padding-bottom: 5em;
+}
 
 .survey-header {
   background: #e0f7fa;
@@ -33,7 +38,6 @@
 	color: white;
 	background-color: #00BCD4;
 	margin-bottom: -1.85em;
-  margin-left: 6.5em;
   cursor: pointer;
 }
 
