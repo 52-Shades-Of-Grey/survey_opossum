@@ -38,7 +38,7 @@ class QuestionsControllerTest < ActionController::TestCase
 
   test "should update question" do
     patch :update, id: @question, question: { description: @question.description, position: @question.position, query: @question.query, query_type: @question.query_type, required: @question.required, survey_id: @question.survey_id }
-    assert_redirected_to question_path(assigns(:question))
+    assert_response :success
   end
 
   test "should destroy question" do
