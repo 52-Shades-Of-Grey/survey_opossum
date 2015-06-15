@@ -2,7 +2,12 @@ var counter = 1;
 
 $(function (){
 
-	// $('.question-container').not(':last').hide();
+	var hideQuestions = function() {
+		var allQuestionCont = $('.outer-container').find('.question-container');
+		allQuestionCont.not(':last').hide();
+	};	 
+
+	hideQuestions();
 
 	$(".btn-new-question").on('click', function () {
 
@@ -45,7 +50,7 @@ $(function (){
 				self.attr('for', forAttr.replace(/[0-9]+/g, counter));
 			}
 		});
-
+		hideQuestions();
 		counter++
 	});
 
