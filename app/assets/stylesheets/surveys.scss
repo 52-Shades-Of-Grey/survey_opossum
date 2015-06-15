@@ -1,6 +1,6 @@
 body {
 	font-family: 'Sintony', sans-serif;
-	background: #B2EBF2;
+	background: #E0F7FA;
 }
 
 button {
@@ -73,7 +73,7 @@ button:focus {
 	width: 100px;
 	height: 100px;
 	color: white;
-	background-color: #00BCD4; 
+	background-color: #00BCD4;
 	margin-bottom: -1.85em;
 }
 
@@ -106,7 +106,7 @@ button:focus {
 }
 
 .question-delete:hover {
-	background-color: #DE4D4E; 
+	background-color: #DE4D4E;
 	color: #FFFFFE;
 }
 
@@ -115,7 +115,7 @@ button:focus {
 .new-question-modal {
 	width: 40em;
 	height: 46em;
-	background-color: #FFFFFE; 
+	background-color: #FFFFFE;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -124,7 +124,7 @@ button:focus {
 }
 
 .modal-inner-cont {
-	padding: 4em;	
+	padding: 4em;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -154,32 +154,6 @@ button:focus {
 	display: block;
 }
 
-.question-container input {     
+.question-container input {
    margin: 1em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

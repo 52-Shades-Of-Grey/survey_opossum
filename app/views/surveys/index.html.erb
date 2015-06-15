@@ -1,28 +1,49 @@
-<h1>Listing Surveys</h1>
+<header class="dashboard-header">
+  <div class="user-dashboard-info">
+    <h1 class="dashboard-title">Welcome!</h1>
+    <h3 class="user-name"><%= @user.name %></h3>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Keyword</th>
-      <th>User</th>
-      <th>Description</th>
-      <th>Published</th>
-      <th> URL </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <%= image_tag asset_path('Drawing.png'), class: "media-object", id: "dashboard-icon"%>
+    <i class="fa fa-search"></i>
+    <input class="search-surveys" placeholder="Enter survey keyword">
+
+</header>
+
+<div class="dashboard-background">
+
+  <div class="my-surveys">
+    <div class="my-surveys-header">
+      <h3 class="my-surveys-title">My Surveys</h3>
+    </div>
+
+    <div class="my-surveys-list">
+
+    <table class="my-surveys-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Keyword</th>
+          <th>Description</th>
+          <th>Published</th>
+          <th> URL </th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+    </div>
 
   <tbody>
     <% @user.surveys.each do |survey| %>
       <tr>
         <td><%= survey.name %></td>
         <td><%= survey.keyword %></td>
-        <td><%= survey.user_id %></td>
         <td><%= survey.description %></td>
         <td><%= survey.published %></td>
         <% if survey.published == true %>
           <td><%= survey.url %></td>
+        <% else %>
+          <td></td>
         <% end %>
         <td><%= link_to 'View', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,10 +52,22 @@
   </tbody>
 </table>
 
+<div class="action-events">
 <br>
 <div class="btn-survey-list">
     <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
 </div>
 
+</div>
 <%= link_to 'New Survey', new_survey_path %>
 <%= link_to 'Update Account Info', edit_user_path(@user.id) %>
+</div>
+
+<div class="dashboard-footer">
+  <a href="https://github.com/52-Shades-Of-Grey/survey_opossum"><i class="fa fa-github"></i>
+</div>
+
+</html>
+<div class="logout">
+  <%= logout_button %>
+</div>
