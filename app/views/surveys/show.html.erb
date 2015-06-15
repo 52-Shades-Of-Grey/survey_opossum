@@ -2,55 +2,13 @@
     <div class="content">
       <div class="survey-header">
       <h1 class="survey-title"><%= @survey.name %></h1>
-        <div class="btn-container">
-          <button class="btn-new-question">Add Question</button>
-        </div>
-
-      </div>
-        <ul class="question-ul">
-        </ul>
-        <button class="btn-create-survey">Submit</button>
-  </div>
-</div>
-
-<div class="new-question-modal hide">
-  <div class="modal-inner-cont">
-
-    <form id="add-question">
-      Question:
-      <input type="text" class="query"><br>
-      Description:
-      <input type="text" class="description"><br>
-      Required field:
-      <input type="checkbox" class="required"><br>
-      Query type:
-      <input type="text" class="query-type"><br>
-      Position:
-      <input type="text" class="position"><br>
-      <button type="submit">Submit</button>
-    </form>
-<<<<<<< HEAD
-  
-  
-=======
-
->>>>>>> f4538fee3ff19c447aa5249ff7cdc829ba53fd50
- </div>
-</div>
-
-<!-- <div class="hide"> -->
-   <h1>Add Question for your Survey</h1>
+        
     <%= form_for(@survey) do |f| %>
       <div id="questions-holder">
-        <br>
-        <br>
-        <br>
-        <h1>FILL ME IN</h1>
-        <br>
         <div class="fields-for">
-          <p>----------------------</p>
           <%= f.fields_for(:questions) do |ff| %>
             <div class="question-container">
+              <h1>Add You Question</h1>
               <div class="field">
                 <%= ff.label :query %><br>
                 <%= ff.text_field :query %>
@@ -67,10 +25,6 @@
                 <%= ff.label :query_type %><br>
                 <%= ff.text_field :query_type %>
               </div>
-              <div class="field">
-                <%= ff.label :position %><br>
-                <%= ff.text_field :position %>
-              </div>
             </div>
           <% end %>
         </div>
@@ -81,13 +35,14 @@
       </div>
     <% end %>
 
-
     <%= link_to 'Edit', edit_survey_path(@survey) %> |
     <%= link_to 'Back', surveys_path %>
-<<<<<<< HEAD
+
+      </div>
+        <ul class="question-ul">
+        </ul>
+        <button class="btn-create-survey">Submit</button>
+  </div>
 </div>
 
 
-=======
-<!-- </div> -->
->>>>>>> f4538fee3ff19c447aa5249ff7cdc829ba53fd50
