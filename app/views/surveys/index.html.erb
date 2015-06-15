@@ -19,12 +19,11 @@
 
     <div class="my-surveys-list">
 
-    <table>
+    <table class="my-surveys-table">
       <thead>
         <tr>
           <th>Name</th>
           <th>Keyword</th>
-          <th>User</th>
           <th>Description</th>
           <th>Published</th>
           <th> URL </th>
@@ -33,14 +32,12 @@
       </thead>
 
     </div>
-  </div>
 
   <tbody>
     <% @user.surveys.each do |survey| %>
       <tr>
         <td><%= survey.name %></td>
         <td><%= survey.keyword %></td>
-        <td><%= survey.user_id %></td>
         <td><%= survey.description %></td>
         <td><%= survey.published %></td>
         <% if survey.published == true %>
@@ -59,6 +56,7 @@
     <%= button_to 'Take a Survey', all_surveys_path, :class => "btn-take-surveys", :method => :get %>
 </div>
 
+</div>
 <%= link_to 'New Survey', new_survey_path %>
 <%= link_to 'Update Account Info', edit_user_path(@user.id) %>
 </div>
