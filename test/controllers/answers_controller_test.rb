@@ -27,7 +27,7 @@ class AnswersControllerTest < ActionController::TestCase
       post :create, answer: { question_id: @answer.question_id, response: @answer.response }
     end
 
-    assert_redirected_to "#{root_url}responses/#{@survey.id}"
+    assert_redirected_to new_response_path
   end
 
   test "should show answer" do
