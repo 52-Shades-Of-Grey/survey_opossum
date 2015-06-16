@@ -5,13 +5,13 @@
       <!-- this renders the survey form -->
     <div class="edit-survey-header">
       <h1><%= @survey.name %></h1>
-    </div>
+      </div>
 
-    <div class="edit-form-div">
-      <%= render 'form' %>
-    </div>
+      <div class="edit-form-div">
+        <%= render 'form' %>
+      </div>
 
-    <div class="edit-questions-div">
+      <div class="edit-questions-div">
       <h2>Edit Questions for your Survey</h2>
       <%= form_for(@survey) do |f| %>
         <%= f.fields_for(:questions) do |ff| %>
@@ -42,21 +42,27 @@
       <% end %>
     </div>
     <% else %>
-      <h1>Answers for <%= @survey.name %></h1>
-          <%= @survey.name %><br>
-          <%= @survey.keyword %><br>
-          <%= @survey.user_id %><br>
-          <%= @survey.description %><br>
+      <h1><%= @survey.name %></h1>
+          <h3>Survey Keyword</h3>
+          <p><%= @survey.keyword %></p><br>
+          <h3>Survey User ID</h3>
+          <p><%= @survey.user_id %></p><br>
+          <h3>Survey Description</h3>
+          <p><%= @survey.description %></p><br>
+          <h3>Is Survey Published?</h3>
           <%= @survey.published %><br>
           <% if @survey.published == true %>
-            <%= @survey.url %></br>
+            <h3>URL to Survey</h3>
+            <%= @survey.url %>
           <% end %>
       <% survey_questions.order(:position).each do |quest| %>
-        <div>Question<%= quest.position %></div>
-          <%= quest.query %><br>
-          <%= quest.required %><br>
-          <%= quest.description %><br>
-          <p>Answer(s)</p>
+        <br><h3>Question<%= quest.position %></h3>
+          <p><%= quest.query %><p><br>
+          <h3>Is The Question Required?</h3>
+          <p><%= quest.required %></p><br>
+          <h3>Question Description</h3>
+          <p><%= quest.description %></p><br>
+          <h3>Answer(s)</h3>
           <% quest.answers.each do |a| %>
             <%= a.response %><br>
             <br>
