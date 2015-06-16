@@ -1,5 +1,13 @@
-<h1>New Survey</h1>
+<div class="new-surveys-main">
 
-<%= render 'form' %>
+  <header class="new-surveys-header">
+    <h1>New Survey</h1>
+  </header>
 
-<%= link_to 'Back', surveys_path %>
+  <div class="new-survey-form">
+    <%= render 'form' %>
+  </div>
+
+  <div class="new-surveys-back">
+    <%= link_to 'Back', surveys_path %>
+</div>

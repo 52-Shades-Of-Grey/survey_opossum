@@ -1,12 +1,14 @@
 <div class="outer-container">
     <div class="content">
       <div class="survey-header">
-      <h1 class="survey-title"><%= @survey.name %></h1>
+        <h1 class="survey-title"><%= @survey.name %></h1>
+      </div>
 
     <%= form_for(@survey) do |f| %>
       <div id="questions-holder">
         <div class="fields-for">
           <%= f.fields_for(:questions) do |ff| %>
+
             <div class="question-container">
               <h1>Add You Question</h1>
               <div class="field">
@@ -33,6 +35,7 @@
                 <%= ff.hidden_field :position %>
               </div>
             </div>
+
           <% end %>
         </div>
       </div>
@@ -42,16 +45,16 @@
       </div>
     <% end %>
 
-    <div class="btn-container">
+    <div class="btn-new-container">
        <button class="btn-new-question">Add Question</button>
-    </div>
-
-    <%= link_to 'Edit', edit_survey_path(@survey) %> |
-    <%= link_to 'Back', surveys_path %>
-
-      </div>
-        <ul class="question-ul">
-        </ul>
-        <button class="btn-create-survey">Submit</button>
+     </div>
+    <div class="btn-survey-container">
+       <button class="btn-create-survey">Submit</button>
   </div>
 </div>
+
+</div>
+
+  <div class="new-survey-footer">
+    <%= link_to 'Back', surveys_path %>
+  </div>
