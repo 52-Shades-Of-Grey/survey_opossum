@@ -42,27 +42,21 @@
       <% end %>
     </div>
     <% else %>
-      <h1><%= @survey.name %></h1>
-          <h3>Survey Keyword</h3>
-          <p><%= @survey.keyword %></p><br>
-          <h3>Survey User ID</h3>
-          <p><%= @survey.user_id %></p><br>
-          <h3>Survey Description</h3>
-          <p><%= @survey.description %></p><br>
-          <h3>Is Survey Published?</h3>
+      <h1>Answers for <%= @survey.name %></h1>
+          <%= @survey.name %><br>
+          <%= @survey.keyword %><br>
+          <%= @survey.user_id %><br>
+          <%= @survey.description %><br>
           <%= @survey.published %><br>
           <% if @survey.published == true %>
-            <h3>URL to Survey</h3>
-            <%= @survey.url %>
+            <%= @survey.url %></br>
           <% end %>
       <% survey_questions.order(:position).each do |quest| %>
-        <br><h3>Question<%= quest.position %></h3>
-          <p><%= quest.query %><p><br>
-          <h3>Is The Question Required?</h3>
-          <p><%= quest.required %></p><br>
-          <h3>Question Description</h3>
-          <p><%= quest.description %></p><br>
-          <h3>Answer(s)</h3>
+        <div>Question<%= quest.position %></div>
+          <%= quest.query %><br>
+          <%= quest.required %><br>
+          <%= quest.description %><br>
+          <p>Answer(s)</p>
           <% quest.answers.each do |a| %>
             <%= a.response %><br>
             <br>
