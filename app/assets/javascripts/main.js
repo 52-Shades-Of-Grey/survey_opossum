@@ -1,6 +1,7 @@
 var counter = 1;
 
-$(function (){
+$(function() {
+
 
 	var hideQuestions = function() {
 		var allQuestionCont = $('.outer-container').find('.question-container');
@@ -58,8 +59,9 @@ $(function (){
 				self.attr('for', forAttr.replace(/[0-9]+/g, counter));
 			}
 		});
+		counter++;
 		hideQuestions();
-		counter++
+		clearValues();
 	});
 
 	$(".btn-create-survey").on('click', function() {
