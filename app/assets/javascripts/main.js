@@ -1,10 +1,20 @@
 var counter = 1;
 
-$(function (){
+$(function() {
+
 
 	var hideQuestions = function() {
 		var allQuestionCont = $('.outer-container').find('.question-container');
 		allQuestionCont.not(':last').hide();
+	};
+
+	var clearValues = function () {
+		var allQuestionCont = $('.outer-container').find('.question-container');
+		var lastQuest = allQuestionCont.last();	
+		var lastInputs = lastQuest.find('input');
+		for (i = 0; i < lastInputs.length; i++) {
+			lastInputs[i].value = '';
+		}
 	};
 
 	hideQuestions();
@@ -42,7 +52,6 @@ $(function (){
 			}
 		});
 
-
 		allLabels.each(function() {
 			if ($(this).attr('for')) {
 				var self = $(this);
@@ -50,8 +59,9 @@ $(function (){
 				self.attr('for', forAttr.replace(/[0-9]+/g, counter));
 			}
 		});
+		counter++;
 		hideQuestions();
-		counter++
+		clearValues();
 	});
 
 	$(".btn-create-survey").on('click', function() {
